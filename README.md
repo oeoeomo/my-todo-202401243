@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 나만의 할 일 목록
 
-## Getting Started
+혼자 사용할 수 있는 간단한 할 일 목록 웹앱입니다. 할 일을 추가하고, 완료 상태를 바꾸고, 삭제할 수 있습니다.
 
-First, run the development server:
+## 실행하기
+
+프로젝트 폴더에서 아래 명령어를 실행한 다음, 브라우저에서 [http://localhost:3000](http://localhost:3000)을 여세요.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 데이터 저장
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+할 일은 현재 브라우저의 `localStorage`에 저장됩니다. 같은 브라우저와 프로필에서 다시 열면 남아 있지만, 다른 기기와 동기화되지 않으며 브라우저의 사이트 데이터를 지우면 할 일도 삭제됩니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+저장 관련 코드는 [`lib/todo-storage.ts`](./lib/todo-storage.ts)에 모았습니다. 나중에 데이터베이스를 연결할 때 이 파일의 저장 기능을 바꾸면 됩니다.
 
-## Learn More
+## 확인 명령어
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+npm run build
+```
